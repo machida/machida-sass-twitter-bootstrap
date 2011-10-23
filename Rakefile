@@ -15,6 +15,7 @@ BOOTSTRAP_MIN_CSS = "bootstrap-#{VERSION}.min.css"
 
 SASS_COMMAND = "sass --load-path lib --style"
 
+desc'aaa'
 task BOOTSTRAP_CSS do |target|
   sh "#{SASS_COMMAND} expanded lib/bootstrap.scss:#{target}"
   css = IO.read(target.to_s)
@@ -22,6 +23,7 @@ task BOOTSTRAP_CSS do |target|
   File.open(target.to_s, 'w+') { |f| f.write(css) }
 end
 
+desc'bbb'
 task BOOTSTRAP_MIN_CSS do |target|
   sh "#{SASS_COMMAND} compressed lib/bootstrap.scss:#{target}"
 end
